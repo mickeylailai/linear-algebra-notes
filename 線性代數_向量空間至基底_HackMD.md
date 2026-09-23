@@ -10,7 +10,7 @@
 - $0_F$ 是純量的零，$0_V$ 是向量的零。下文不致混淆時都記成 $0$。
 - $M_{m\times n}(F)$ 是所有 $m\times n$、元素屬於 $F$ 的矩陣所成的集合。
 - $P(F)$ 是係數屬於 $F$ 的**形式多項式**空間；$P_n(F)=\{0\}\cup\{f\in P(F):\deg f\le n\}$，其中 $n\ge0$。零多項式的次數不必定義。
-- $\operatorname{span}(\varnothing)=\{0\}$；空集合線性獨立。這兩項約定使後續命題也適用於零維空間。
+- $\mathrm{span}(\varnothing)=\{0\}$；空集合線性獨立。這兩項約定使後續命題也適用於零維空間。
 
 ## 1. Vector Spaces（向量空間）
 
@@ -88,24 +88,24 @@ $U+W$ 是子空間；且 $U+W$ 中的每個向量都能**唯一**表示成 $u+w$
 有限多個 $v_1,\ldots,v_k\in V$ 的線性組合是 $a_1v_1+\cdots+a_kv_k$，其中 $a_i\in F$。對任意集合 $S\subseteq V$，
 
 $$
-\operatorname{span}(S)=\left\{\sum_{i=1}^k a_iv_i:k\ge0,\ a_i\in F,\ v_i\in S\right\}.
+\mathrm{span}(S)=\left\{\sum_{i=1}^k a_iv_i:k\ge0,\ a_i\in F,\ v_i\in S\right\}.
 $$
 
-允許 $k=0$，空和就是 $0_V$。即使 $S$ 是無限集合，每個線性組合也**只用有限多項**。若 $\operatorname{span}(S)=V$，稱 $S$ 生成（spans）$V$。
+允許 $k=0$，空和就是 $0_V$。即使 $S$ 是無限集合，每個線性組合也**只用有限多項**。若 $\mathrm{span}(S)=V$，稱 $S$ 生成（spans）$V$。
 
 ### Theorem 3.2　span 是最小子空間
 
-$\operatorname{span}(S)$ 是包含 $S$ 的子空間；任何包含 $S$ 的子空間 $W$ 都包含 $\operatorname{span}(S)$。
+$\mathrm{span}(S)$ 是包含 $S$ 的子空間；任何包含 $S$ 的子空間 $W$ 都包含 $\mathrm{span}(S)$。
 
-**Proof.** The empty sum belongs to $\operatorname{span}(S)$. Sums and scalar multiples of finite linear combinations are still finite linear combinations; hence it is a subspace. Each $s\in S$ equals $1s$, so $S\subseteq\operatorname{span}(S)$. If $W$ is a subspace containing $S$, its closure under addition and scalar multiplication puts every finite linear combination of elements of $S$ in $W$. Thus $\operatorname{span}(S)\subseteq W$. $\square$
+**Proof.** The empty sum belongs to $\mathrm{span}(S)$. Sums and scalar multiples of finite linear combinations are still finite linear combinations; hence it is a subspace. Each $s\in S$ equals $1s$, so $S\subseteq\mathrm{span}(S)$. If $W$ is a subspace containing $S$, its closure under addition and scalar multiplication puts every finite linear combination of elements of $S$ in $W$. Thus $\mathrm{span}(S)\subseteq W$. $\square$
 
 ### Theorem 3.3　加入已在 span 中的向量不改變 span
 
-若 $w\in\operatorname{span}(S)$，則 $\operatorname{span}(S\cup\{w\})=\operatorname{span}(S)$。
+若 $w\in\mathrm{span}(S)$，則 $\mathrm{span}(S\cup\{w\})=\mathrm{span}(S)$。
 
-**Proof.** Since $S\subseteq S\cup\{w\}$, we have $\operatorname{span}(S)\subseteq\operatorname{span}(S\cup\{w\})$. Since $\operatorname{span}(S)$ is a subspace containing $S\cup\{w\}$, minimality gives the reverse inclusion. $\square$
+**Proof.** Since $S\subseteq S\cup\{w\}$, we have $\mathrm{span}(S)\subseteq\mathrm{span}(S\cup\{w\})$. Since $\mathrm{span}(S)$ is a subspace containing $S\cup\{w\}$, minimality gives the reverse inclusion. $\square$
 
-**例 3.4**：$(1,1)=(1,0)+(0,1)$，所以 $\operatorname{span}\{(1,0),(0,1),(1,1)\}=\mathbb R^2$；第三個向量在生成方面是多餘的。
+**例 3.4**：$(1,1)=(1,0)+(0,1)$，所以 $\mathrm{span}\{(1,0),(0,1),(1,1)\}=\mathbb R^2$；第三個向量在生成方面是多餘的。
 
 ## 4. Linear Independence（線性獨立）
 
@@ -129,7 +129,7 @@ $$
 
 ### Theorem 4.3　獨立組的表示唯一
 
-若 $S=\{v_1,\ldots,v_k\}$ 線性獨立，則 $\operatorname{span}(S)$ 中每個向量相對於這組向量的係數唯一。
+若 $S=\{v_1,\ldots,v_k\}$ 線性獨立，則 $\mathrm{span}(S)$ 中每個向量相對於這組向量的係數唯一。
 
 **Proof.** Suppose $\sum_i a_iv_i=\sum_i b_iv_i$. Then $\sum_i(a_i-b_i)v_i=0$. Linear independence gives $a_i-b_i=0$ for each $i$. $\square$
 
@@ -139,7 +139,7 @@ $$
 
 ### Definition 5.1　基底
 
-$B\subseteq V$ 是 $V$ 的基底（basis），若 $B$ 同時線性獨立且 $\operatorname{span}(B)=V$。零空間 $\{0\}$ 的基底是空集合。
+$B\subseteq V$ 是 $V$ 的基底（basis），若 $B$ 同時線性獨立且 $\mathrm{span}(B)=V$。零空間 $\{0\}$ 的基底是空集合。
 
 ### Theorem 5.2　基底與唯一座標
 
@@ -151,7 +151,7 @@ $B=\{v_1,\ldots,v_n\}$ 是 $V$ 的基底，若且唯若每個 $v\in V$ 都能**�
 
 基底既是**極小生成集**（移除任何一個向量就不再生成），也是**極大線性獨立集**（加入任何一個基底外的向量就相依）。反過來，在 $V$ 中，極小生成集或極大線性獨立集也都是基底。
 
-**Proof.** Let $B$ be a basis. If $B\setminus\{b\}$ still spanned $V$, then $b$ would be a linear combination of other elements of $B$, contradicting independence. If $v\notin B$, spanning expresses $v$ as a finite linear combination of elements of $B$, so $B\cup\{v\}$ is dependent. Conversely, a minimal spanning set cannot be dependent: a nontrivial dependence lets us remove one member without changing its span. A maximal independent set must span: otherwise choose $v\notin\operatorname{span}(B)$; a dependence in $B\cup\{v\}$ would force $v\in\operatorname{span}(B)$, a contradiction. $\square$
+**Proof.** Let $B$ be a basis. If $B\setminus\{b\}$ still spanned $V$, then $b$ would be a linear combination of other elements of $B$, contradicting independence. If $v\notin B$, spanning expresses $v$ as a finite linear combination of elements of $B$, so $B\cup\{v\}$ is dependent. Conversely, a minimal spanning set cannot be dependent: a nontrivial dependence lets us remove one member without changing its span. A maximal independent set must span: otherwise choose $v\notin\mathrm{span}(B)$; a dependence in $B\cup\{v\}$ would force $v\in\mathrm{span}(B)$, a contradiction. $\square$
 
 ### Example 5.4　矩陣空間的標準基底（課堂照片）
 
@@ -173,7 +173,7 @@ $$
 
 **Theorem.** 對 $n\ge0$，$\mathcal P_n=\{1,x,x^2,\ldots,x^n\}$ 是 $P_n(F)$ 的基底。
 
-**Proof — spanning.** Let $f\in P_n(F)$. By definition, there are $a_0,\ldots,a_n\in F$ such that $f=a_0+a_1x+\cdots+a_nx^n$; for the zero polynomial, take all $a_i=0$. Hence $f\in\operatorname{span}(\mathcal P_n)$.
+**Proof — spanning.** Let $f\in P_n(F)$. By definition, there are $a_0,\ldots,a_n\in F$ such that $f=a_0+a_1x+\cdots+a_nx^n$; for the zero polynomial, take all $a_i=0$. Hence $f\in\mathrm{span}(\mathcal P_n)$.
 
 **Proof — independence.** Suppose $c_0+c_1x+\cdots+c_nx^n=0$ as a **polynomial identity**. Equality of formal polynomials means equality of corresponding coefficients. Thus $c_0=c_1=\cdots=c_n=0$, so $\mathcal P_n$ is linearly independent. Therefore it is a basis. $\square$
 
@@ -189,7 +189,7 @@ $$
 
 若 $V$ 由 $n$ 個向量 $w_1,\ldots,w_n$ 生成，而 $v_1,\ldots,v_k$ 線性獨立，則 $k\le n$；並且可依序把 $k$ 個 $w_i$ 換成 $v_1,\ldots,v_k$，仍保持生成 $V$。
 
-**Proof.** Initially the $w_i$ span $V$. Suppose after $r-1$ replacements the list $v_1,\ldots,v_{r-1},w_r,\ldots,w_n$ still spans $V$. Express $v_r$ using this list. At least one coefficient of $w_r,\ldots,w_n$ is nonzero; otherwise $v_r\in\operatorname{span}\{v_1,\ldots,v_{r-1}\}$, contrary to independence. Solve for that $w_i$ and replace it with $v_r$. The new list still spans $V$. This requires an unremoved $w_i$ at every step; hence $k\le n$. $\square$
+**Proof.** Initially the $w_i$ span $V$. Suppose after $r-1$ replacements the list $v_1,\ldots,v_{r-1},w_r,\ldots,w_n$ still spans $V$. Express $v_r$ using this list. At least one coefficient of $w_r,\ldots,w_n$ is nonzero; otherwise $v_r\in\mathrm{span}\{v_1,\ldots,v_{r-1}\}$, contrary to independence. Solve for that $w_i$ and replace it with $v_r$. The new list still spans $V$. This requires an unremoved $w_i$ at every step; hence $k\le n$. $\square$
 
 ### Theorem 6.3　所有有限基底等長
 
@@ -205,7 +205,7 @@ $$
 2. 每個有限生成集都可刪去多餘向量，縮減為 $V$ 的基底。
 3. 若恰有 $n$ 個向量，則**線性獨立**與**生成 $V$** 任一條件成立，就足以保證它們是基底。
 
-**Proof.** Start with an independent set $S$. If it does not span $V$, choose $v\notin\operatorname{span}(S)$. Then $S\cup\{v\}$ stays independent: a dependence with a nonzero coefficient of $v$ would put $v$ in $\operatorname{span}(S)$. Lemma 6.2 bounds the size by $n$, so this process ends with a basis. For a finite spanning set, whenever it is dependent, remove a vector expressible by the others; Theorem 3.3 preserves its span. The process ends with an independent spanning set. Finally, an independent set of size $n$ can be extended to a basis but no extra vector can be added, since all bases have size $n$. A spanning set of size $n$ can be reduced to a basis but no vector can be removed. $\square$
+**Proof.** Start with an independent set $S$. If it does not span $V$, choose $v\notin\mathrm{span}(S)$. Then $S\cup\{v\}$ stays independent: a dependence with a nonzero coefficient of $v$ would put $v$ in $\mathrm{span}(S)$. Lemma 6.2 bounds the size by $n$, so this process ends with a basis. For a finite spanning set, whenever it is dependent, remove a vector expressible by the others; Theorem 3.3 preserves its span. The process ends with an independent spanning set. Finally, an independent set of size $n$ can be extended to a basis but no extra vector can be added, since all bases have size $n$. A spanning set of size $n$ can be reduced to a basis but no vector can be removed. $\square$
 
 ### Corollary 6.5　常見空間的維度
 
@@ -227,7 +227,95 @@ $$
 
 **Proof.** Choose a basis $b_1,\ldots,b_r$ of $U\cap W$. Extend it to a basis $b_1,\ldots,b_r,u_1,\ldots,u_p$ of $U$ and to a basis $b_1,\ldots,b_r,w_1,\ldots,w_q$ of $W$. Their union spans $U+W$. For independence, suppose $\sum_i\alpha_i b_i+\sum_j\beta_j u_j+\sum_k\gamma_k w_k=0$. Then $\sum_k\gamma_k w_k=-\sum_i\alpha_i b_i-\sum_j\beta_j u_j\in U\cap W$. Independence of the basis of $W$ forces every $\gamma_k=0$. Independence of the basis of $U$ then forces all $\alpha_i,\beta_j=0$. Thus the union is a basis with $r+p+q=(r+p)+(r+q)-r$ vectors. $\square$
 
-## 7. 考前速查與易錯處
+## 7. 用處與例題
+
+這一節把定義與定理放進實際題目。每題先說明**何時使用**，再展示可直接仿寫的解法。
+
+### 例題 7.1　向量空間：辨認運算的零向量
+
+**用處**：題目若重新定義加法，不能直接把平常的數字 $0$ 當成零向量；先找出此運算的零元，才能繼續檢查向量空間公理。
+
+令 $V=\mathbb R_{>0}$，定義「加法」$u\oplus v=uv$，以及「純量乘法」$a\odot u=u^a$（$a\in\mathbb R$）。找出 $V$ 的零向量與 $u$ 的加法反元素。
+
+**解**：零向量 $e$ 必須滿足 $u\oplus e=u$，即 $ue=u$，所以 $e=1$。反元素 $w$ 滿足 $u\oplus w=e=1$，所以 $w=1/u$。在這個運算下，$0_{\mathbb R}\odot u=u^0=1=e$，正好符合定理 1.2。
+
+**檢查**：$\mathbb R_{>0}$ 在這兩個運算下確實是 $\mathbb R$ 上的向量空間；例如 $(a+b)\odot u=u^{a+b}=u^au^b=(a\odot u)\oplus(b\odot u)$，其餘公理也由正數乘法與次方性質得到。
+
+### 例題 7.2　子空間：齊次條件
+
+**用處**：由線性齊次方程定義的集合，通常用 subspace test 一次證明封閉性；若右側是非零常數，先檢查零向量。
+
+判斷 $W=\{(x,y,z)\in\mathbb R^3:x-2y+z=0\}$ 與 $A=\{(x,y,z)\in\mathbb R^3:x-2y+z=1\}$ 是否為子空間。
+
+**解**：令 $L(x,y,z)=x-2y+z$。若 $u,v\in W$ 且 $a,b\in\mathbb R$，則 $L(au+bv)=aL(u)+bL(v)=0$；且 $0\in W$，故 $W$ 是子空間。因 $L(0)=0\ne1$，$A$ 不含零向量，故不是子空間。
+
+### 例題 7.3　Span：判斷能否表示目標向量
+
+**用處**：求某個向量是否落在 span 中，就是解「係數能否存在」的問題。
+
+設 $v_1=(1,1,0)$、$v_2=(0,1,1)$。判斷 $w=(2,3,1)$ 是否屬於 $\mathrm{span}\{v_1,v_2\}$。
+
+**解**：令 $av_1+bv_2=w$，比較三個座標得 $a=2$、$a+b=3$、$b=1$，三式相容。因此 $w=2v_1+v_2$，故 $w\in\mathrm{span}\{v_1,v_2\}$。若改成 $(2,3,2)$，前兩式要求 $b=1$，第三式卻要求 $b=2$，因此它不在此 span 中。
+
+### 例題 7.4　線性獨立：找出多餘向量
+
+**用處**：檢查一組向量能否擔任基底，以及從生成集刪除多餘的向量。
+
+設 $S=\{(1,0,1),(0,1,1),(1,1,2)\}$。判斷 $S$ 是否線性獨立。
+
+**解**：第三個向量等於前兩個之和，因此
+
+$$
+(1,0,1)+(0,1,1)-(1,1,2)=(0,0,0).
+$$
+
+係數 $(1,1,-1)$ 不全為零，所以 $S$ 線性相依。刪去第三個向量後，前兩個向量線性獨立，仍生成與原集合相同的子空間。
+
+### 例題 7.5　基底與座標：同一向量的不同表示
+
+**用處**：選定基底後，可以用一串係數記錄向量；轉換基底時，向量本身不變，座標會改變。
+
+在 $\mathbb R^2$ 中，令 $B=((1,1),(1,-1))$。證明 $B$ 是基底，並求 $[(3,1)]_B$。
+
+**解**：若 $a(1,1)+b(1,-1)=(0,0)$，則 $a+b=0$、$a-b=0$，因此 $a=b=0$。兩個線性獨立向量位於二維空間，故構成基底。再解 $a+b=3$、$a-b=1$，得 $a=2$、$b=1$，所以
+
+$$
+(3,1)=2(1,1)+(1,-1),\qquad [(3,1)]_B=\begin{pmatrix}2\\1\end{pmatrix}.
+$$
+
+### 例題 7.6　黑板上的方法（一）：從獨立集合延伸基底
+
+**用處**：題目先指定一些「一定要留在基底裡」的獨立向量時，加入 span 之外的新向量，直到整個空間被生成。
+
+在 $\mathbb R^3$ 中，從 $S=\{(1,1,0),(0,1,1)\}$ 出發，找一組包含 $S$ 的基底。
+
+**解**：令 $u_1=(1,1,0)$、$u_2=(0,1,1)$。它們線性獨立，因 $au_1+bu_2=0$ 的第一、第三座標分別給出 $a=b=0$。取 $e_1=(1,0,0)$。若 $e_1=au_1+bu_2=(a,a+b,b)$，第一、第三座標要求 $a=1,b=0$，第二座標卻變成 $1\ne0$，所以 $e_1\notin\mathrm{span}(S)$。因此加入 $e_1$ 後仍獨立；三個獨立向量位於三維空間，得到基底
+
+$$
+B=\{(1,1,0),(0,1,1),(1,0,0)\}.
+$$
+
+**對照黑板的停止條件**：此時 $\mathrm{span}(B)=\mathbb R^3$，停止。有限維保證持續加入獨立向量的過程最多進行 $\dim V$ 次。
+
+### 例題 7.7　黑板上的方法（二）：從生成集縮減基底
+
+**用處**：題目給了很多生成向量、其中有重複資訊時，逐一刪掉可由其他向量表示的向量。
+
+設 $S=\{(1,0),(0,1),(1,1),(2,1)\}\subseteq\mathbb R^2$。從 $S$ 選出一組基底。
+
+**解**：$(1,1)=(1,0)+(0,1)$，$(2,1)=2(1,0)+(0,1)$，故刪除這兩個向量不改變 span。留下的 $\beta=\{(1,0),(0,1)\}$ 線性獨立且生成 $\mathbb R^2$，所以是基底。
+
+**對照黑板的停止條件**：對每個 $u\in S\setminus\beta$，$\beta\cup\{u\}$ 都線性相依，表示 $u\in\mathrm{span}(\beta)$。既然原本 $\mathrm{span}(S)=V$，便有 $\mathrm{span}(\beta)=V$。這項推論需要「原本 $S$ 生成 $V$」這個前提；如果不知道 $S$ 是否生成 $V$，只能保證 $\beta$ 是 $\mathrm{span}(S)$ 的基底。
+
+### 例題 7.8　維度公式：兩個平面的和
+
+**用處**：兩個子空間有重疊時，計算 $U+W$ 的維度要把重複算到的交集扣回來。
+
+令 $U=\mathrm{span}\{e_1,e_2\}$、$W=\mathrm{span}\{e_2,e_3\}\subseteq\mathbb R^3$，求 $\dim(U+W)$。
+
+**解**：$\dim U=\dim W=2$，交集為 $\mathrm{span}\{e_2\}$，維度是 $1$。所以 $\dim(U+W)=2+2-1=3$；也可直接看出 $U+W=\mathbb R^3$。
+
+## 8. 考前速查與易錯處
 
 | 想證明的事 | 直接使用的做法 |
 | --- | --- |
@@ -238,7 +326,7 @@ $$
 | $V$ 中恰有 $\dim V$ 個向量 | 只需再證明生成或獨立其中一項 |
 
 1. $\{0\}$ 是子空間，但 $\{0\}$ **不是**線性獨立集合；它的基底是 $\varnothing$。
-2. $\operatorname{span}(S)$ 的元素是有限線性組合；不要把它和任意無限級數混在一起。
+2. $\mathrm{span}(S)$ 的元素是有限線性組合；不要把它和任意無限級數混在一起。
 3. 基底給的是**唯一表示**；只會生成並不足以保證係數唯一。
 4. 矩陣基底數量 $mn$ 由位置 $(i,j)$ 計算；$P_n(F)$ 包含常數項，共有 $n+1$ 個單項式。
 5. 說多項式基底獨立時，比的是**係數**，不是只代入若干個數值。
